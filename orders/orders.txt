@@ -1,0 +1,4 @@
+05:04, 22nd January 2017	1tires 	1oil 	1spark plugs 	$125.4	A city
+05:04, 22nd January 2017	2tires 	1oil 	3spark plugs 	$244.2	B city
+05:05, 22nd January 2017	 2 tires 	1 oil 	3 spark plugs 	$244.2	B city
+06:23, 22nd January 2017	 2 tires 	1 oil 	3 spark plugs 	$244.2	B city
