@@ -124,7 +124,29 @@ echo implode('; ', substr_replace($input, $replace, 3, 3))."\n";
 $length = array(1, 2, 3);
 echo implode('; ', substr_replace($input, $replace, 3, $length))."\n";
 ?>
+</p>
 
+<p>
+<?php
+  echo "<br />Using preg_match()<br />";
+  preg_match('/(how)(are)(you)/', 'howareyou', $matches, PREG_OFFSET_CAPTURE);
+  echo "<pre>";
+  print_r($matches);
+  echo "</pre>";
+
+// get host name from URL
+preg_match('@^(?:http://)?([^/]+)@i', //you can not use '/' for bondary
+    "http://www.php.net/index.html", $matches);
+$host = $matches[1];
+  echo "<pre>";
+  print_r($matches);
+  echo "</pre>";
+
+// get last two segments of host name
+preg_match('/[^.]+\.[^.]+$/', $host, $matches);
+echo "domain name is: {$matches[0]}\n";
+
+?>
 </p>
 
 </body>
