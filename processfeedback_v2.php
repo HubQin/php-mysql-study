@@ -135,7 +135,7 @@ echo implode('; ', substr_replace($input, $replace, 3, $length))."\n";
   echo "</pre>";
 
 // get host name from URL
-preg_match('@^(?:http://)?([^/]+)@i', //you can not use '/' for bondary
+preg_match('@^(?:http://)?([^/]+)@i', //you can not use '/' as delimeter
     "http://www.php.net/index.html", $matches);
 $host = $matches[1];
   echo "<pre>";
