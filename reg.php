@@ -28,6 +28,19 @@ print_r(preg_grep("/^(\d+)?\.\d+\.\d+$/",$array));
 echo "<pre>";
 print_r(array_flip(get_defined_constants(true)['pcre'])[preg_last_error()]);
 echo "</pre>";
+echo "<pre>";
+$subject = 'Aaaaaa Bbbb';
+$pattern = array('~[a]+~i','~[b]+~i');
+
+preg_replace_callback( $pattern,
+	function($match) {
+		echo $match[0].' was found <br />';
+		print_r($match);
+	},$subject
+	
+);
+print_r($match[0]);
+echo "</pre>";
 
 ?>
 
