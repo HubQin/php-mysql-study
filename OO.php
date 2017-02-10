@@ -2,7 +2,7 @@
   //declare a class
   class classname
   {
-	private $attribute1;
+	private $attribute1;//visit private property outside class, __set and __get will called.
 	public $attribute2;
 	
 	/*function __construct($param)
@@ -19,18 +19,18 @@
 	}
 	function __destruct()
 	{
-		echo "Destruct called ...Destroying ".$this->name." <br />";
+		echo "Destruct called ...Destroying ".$this->name." <br />";//should remove $ before 'name',otherwise error:occues:Cannot access empty property.($this->property,self::$property(static))
 	}
 
 	function __get($name) // function names starting with __ are magic methods.
 	{
 		echo "function __get called...<vr />";
-		return $this->name; //should remove $ before 'name',otherwise error:occues:Cannot access empty property.($this->property,self::$property(static))
+		return $this->$name; 
 	}
 	function __set($name, $value)
 	{
 		
-		$this->name = $value;
+		$this->$name = $value;
 		echo "function __set called...<br />";
 	}
   }
