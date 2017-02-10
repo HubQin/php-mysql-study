@@ -2,13 +2,13 @@
   //declare a class
   class classname
   {
-	public $attribute1;
+	private $attribute1;
 	public $attribute2;
 	
-	function __construct($param)
+	/*function __construct($param)
 	{
 		echo "Constructor called with parameter ".$param."<br />";
-	}
+	}*/
 	function operation1()
 	{
 
@@ -24,18 +24,22 @@
 
 	function __get($name) // function names starting with __ are magic methods.
 	{
+		echo "function __get called...<vr />";
 		return $this->name; //should remove $ before 'name',otherwise error:occues:Cannot access empty property.($this->property,self::$property(static))
 	}
 	function __set($name, $value)
 	{
+		
 		$this->name = $value;
+		echo "function __set called...<br />";
 	}
   }
 
-  $a = new classname("First");
-  $b = new classname("Second");
-  $c = new classname("");
-  $a->$attribute1 = 5;
+  $a = new classname();
+  //$b = new classname("Second");
+  //$c = new classname("");
+  $a->attribute1 = 5;
+  echo " the value of attribute1 is ". $a->attribute1 ."<br />";
 
   // ******test overloading,subclass******
   class A

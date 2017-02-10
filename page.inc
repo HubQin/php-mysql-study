@@ -14,8 +14,8 @@ class Page
 
   // class Page's operations
   public function __set($name, $value)
-  {
-    $this->$name = $value;
+  { 
+    $this->name = $value;
   }
 
   public function Display()
