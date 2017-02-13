@@ -121,4 +121,30 @@
   $book = new storybook;
   $book->canRead();
   $book->canHear();
+
+// Iterator
+class MyIterator implements IteratorAggregate
+{
+    private $var = array();
+
+    public function __construct($array)
+    {
+        if (is_array($array)) {
+            $this->var = $array;
+        }
+    }
+
+    public function getIterator()
+	{
+		return new ArrayIterator($this->var);
+	}
+}
+
+$values = array('a','b','c');
+$it = new MyIterator($values);
+echo "<pre>";
+foreach ($it as $a => $b) {
+    print "$a: $b\n";
+}
+echo "</pre>";
 ?>
