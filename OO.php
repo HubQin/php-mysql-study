@@ -4,6 +4,8 @@
   {
 	private $attribute1;//visit private property outside class, __set and __get will called.
 	public $attribute2;
+	protected $attribute3;
+	const constant = "constant value";//can not prefix with $
 	
 	/*function __construct($param)
 	{
@@ -19,7 +21,7 @@
 	}
 	function __destruct()
 	{
-		echo "Destruct called ...Destroying ".$this->name." <br />";//should remove $ before 'name',otherwise error:occues:Cannot access empty property.($this->property,self::$property(static))
+		echo "Destruct called ...Destroying ".$this->name." <br />";//should remove $ before 			'name',otherwise error:occues:Cannot access empty property.
 	}
 
 	function __get($name) // function names starting with __ are magic methods.
@@ -33,6 +35,10 @@
 		$this->$name = $value;
 		echo "function __set called...<br />";
 	}
+	function showConstant()
+	{
+		echo self::constant;
+	}
   }
 
   $a = new classname();
@@ -40,6 +46,8 @@
   //$c = new classname("");
   $a->attribute1 = 5;
   echo " the value of attribute1 is ". $a->attribute1 ."<br />";
+  echo  classname::constant."<br />";
+  echo $a->showConstant()."<br />";
 
   // ******test overloading,subclass******
   class A
@@ -82,4 +90,35 @@
   }
   $I = new webPage();
   $I->display();
+  if($I instanceof Displayable)  // return true,the book is wrong
+  {
+	echo "\$I is instance of Displayable.<br />";
+  }
+  else 
+  {
+	echo "\$I is not instance of Displyable.<br />";
+  }
+// ***use Trait***
+  trait book
+  {
+	function canRead()
+	{
+		echo "book can read.<br />";
+	}
+  }
+  trait story
+  {
+	function canHear()
+	{
+		echo "story is funny.<br />";
+	}
+  }
+
+  class storybook
+  {
+	use book,story;
+  }
+  $book = new storybook;
+  $book->canRead();
+  $book->canHear();
 ?>
