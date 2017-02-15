@@ -6,6 +6,7 @@
 <h1>Bob's Auto Parts</h1>
 <h2>Order Results</h2>
 <?php
+  require_once 'file_exceptions.php';
   // create short variable names
   $tireqty = $_POST[ 'tireqty' ];
   $oilqty = $_POST[ 'oilqty' ];
@@ -75,16 +76,26 @@
                    .$totalamount."\t".$address."\n";
 
   echo $DOCUMENT_ROOT;
-  @ $fp = fopen("$DOCUMENT_ROOT/orders/orders.txt",'ab');
-  flock($fp,LOCK_EX);
-  if (!$fp) {
-	echo "<p><strong> Your order could not be processed at this time. Please try again later.</strong></p>";
-	exit;
-  }
-  fwrite($fp,$outputstring,strlen($outputstring));
+// open file for appending
+  try {
+  if(!($fp = @fopen("$DOCUMENT_ROOT/orders/orders.txt",'ab')))
+	throw new fileOpenException();
+  if(!(flock($fp,LOCK_EX)))
+	throw new fileLockException();
+  if(!(fwrite($fp,$outputstring,strlen($outputstring))))
+	throw new fileWriteException();
   flock($fp,LOCK_UN);
   fclose($fp);
   echo "<p>Order written.</p>";
+  }
+  catch (fileOpenException $foe) {
+	echo "<p><strong>Orders file could not be opened.
+         Please contact our webmaster for help.</strong></p>";
+  }
+  catch (Exception $e) {
+	echo "<p><strong>Your order could not be processed at this time.
+         Please try again later.</strong></p>";
+  }
 
 ?>
 </body>
