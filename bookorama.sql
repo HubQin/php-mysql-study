@@ -1,9 +1,10 @@
 create table customers
-( customerid int unsigned not null auto_increment primary key,
+( customerid int unsigned not null auto_increment primary key, 
+	-- auto_increment,if not specified or NULL,it will auto increment
   name char(50) not null,
   address char(100) not null,
   city char(30) not null
-);
+); 
 
 create table orders
 ( orderid int unsigned not null auto_increment primary key,
@@ -24,7 +25,7 @@ create table order_items
   isbn char(13) not null,
   quantity tinyint unsigned,
 
-  primary key (orderid, isbn)
+  primary key (orderid, isbn)  --if have more than one primary key,use this clause
 
 );
 create table book_reviews
