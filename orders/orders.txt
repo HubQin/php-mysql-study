@@ -1,0 +1,15 @@
+05:05, 22nd January 2017	 2 tires 	1 oil 	3 spark plugs 	$244.2	B city
+06:23, 22nd January 2017	 2 tires 	1 oil 	3 spark plugs 	$244.2	B city
+01:58, 23rd January 2017	 5 tires 	5 oil 	10 spark plugs 	$649	W city	
+11:57, 15th February 2017	 2 tires 	2 oil 	2 spark plugs 	$250.8	Q city
+11:58, 15th February 2017	 2 tires 	2 oil 	2 spark plugs 	$250.8	Q city
+11:58, 15th February 2017	 2 tires 	2 oil 	2 spark plugs 	$250.8	Q city
+12:38, 15th February 2017	 2 tires 	2 oil 	2 spark plugs 	$250.8	Q city
+12:39, 15th February 2017	 2 tires 	2 oil 	2 spark plugs 	$250.8	Q city
+12:39, 15th February 2017	 2 tires 	2 oil 	2 spark plugs 	$250.8	Q city
+12:40, 15th February 2017	 2 tires 	2 oil 	2 spark plugs 	$250.8	Q city
+12:41, 15th February 2017	 2 tires 	2 oil 	2 spark plugs 	$250.8	Q city
+12:42, 15th February 2017	 2 tires 	2 oil 	2 spark plugs 	$250.8	Q city
+12:42, 15th February 2017	 2 tires 	2 oil 	2 spark plugs 	$250.8	Q city
+12:44, 15th February 2017	 2 tires 	2 oil 	2 spark plugs 	$250.8	Q city
+12:44, 15th February 2017	 2 tires 	2 oil 	2 spark plugs 	$250.8	Q city
