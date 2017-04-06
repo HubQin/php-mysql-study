@@ -1,0 +1,6 @@
+ErrorDocument 401 /17/rejection.html
+AuthUserFile /home/.htpass
+AuthGroupFile /dev/null
+AuthName "Realm-test"
+AuthType Basic
+require valid-user
