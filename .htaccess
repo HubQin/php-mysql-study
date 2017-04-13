@@ -2,12 +2,12 @@
 deny from all
 </Files>
 Options -Indexes
-AuthUserFile /root/.htpasswd
+AuthUserFile /etc/test/.htpass
 AuthGroupFile /dev/null
 AuthName "Realm-test"
 AuthType Basic
 require valid-user 
-ErrorDocument 401 /17/rejection.html
+ErrorDocument 401 /rejection.html
 order deny,allow
 
 
